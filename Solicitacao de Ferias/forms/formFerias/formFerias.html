@@ -1,0 +1,156 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="events/preeencherEmail.js" charset="utf-8"></script>
+</head>
+<body>
+<div class="fluig-style-guide">
+<form name="form" role="form">
+
+	<div class="panel panel-primary">
+	    <div class="panel-heading">
+	        <h3 class="panel-title"><span class="fluigicon fluigicon-user fluigicon-md"></span> Informações do Solicitante</h3>
+	    </div>
+	    <div class="panel-body">
+
+			<div class="row">
+				
+				<div class="form-group col-md-4">
+					<label for="nome">Nome</label>
+					<select name="nome" id="nome" value="nome" onchange="preencherEmail(nome)" class="form-control" dataset="colleague" datasetkey="colleagueId" datasetvalue="colleagueName">
+					</select>
+				</div>
+				
+				<div class="form-group col-md-8">
+					<label for="email">Email</label>
+					<select name="email" id="email" value="email" class="form-control" dataset="colleague" datasetkey="mail" datasetvalue="mail">
+					</select>
+				</div>
+			
+			</div>
+			
+			<div class="row">
+			
+				<div class="form-group col-md-2">
+					<label for="dataInicioFerias">Data Início</label>
+					<input type="text" name="dataInicioFerias" id="dataInicioFerias" class="form-control" mask="00/00/0000" placeholder="dd/mm/aaaa">
+				</div>
+				
+				<div class="form-group col-md-2">
+					<label for="dataFimFerias">Data Fim</label>
+					<input type="text" name="dataFimFerias" id="dataInicioFerias" class="form-control" mask="00/00/0000" placeholder="dd/mm/aaaa">
+				</div>
+			
+			</div>
+			
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label for="area">Selecione sua área:</label>
+					<select name="area" id="area" class="form-control" dataset="group" datasetkey="groupId" datasetvalue="groupDescription">
+					</select>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="form-group col-md-12">
+					<label for="obsFerias">Observação/Comentário:</label>
+					<textarea rows="5" name="obsFerias" id="obsFerias" class="form-control"></textarea>
+				</div>
+			</div>
+			
+		</div>
+	</div>	
+	
+	<div class="panel panel-primary">
+	    <div class="panel-heading">
+	        <h3 class="panel-title"><span class="fluigicon fluigicon-user-selection fluigicon-md"></span> Aprovação do Gerente</h3>
+	    </div>
+	    <div class="panel-body">
+	
+			<div class="row">
+			
+				<div class="form-group col-md-4">
+					<label for="aprovGerente">Aprovação do Gerente:</label>
+					<div class="radio">
+						<label><input type="radio" name="aprovGerente" id="aprovGerente" value="sim">Sim</label>
+						<label><input type="radio" name="aprovGerente" id="aprovGerente" value="nao">Não</label>
+					</div>
+				</div>
+			
+			</div>
+			
+			<div class="row">
+				<div class="form-group col-md-12">
+					<label for="obsGerente">Observação/Comentário do Gerente:</label>
+					<textarea rows="5" name="obsGerente" id="obsGerente" class="form-control"></textarea>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div class="panel panel-primary">
+	    <div class="panel-heading">
+	        <h3 class="panel-title"><span class="fluigicon fluigicon-user-selection fluigicon-md"></span>Aprovação do RH</h3>
+	    </div>
+	    <div class="panel-body">
+	    	
+	    	<div class="row">
+			
+				<div class="form-group col-md-4">
+					<label for="aprovRh">Aprovação do RH:</label>
+					<div class="radio">
+						<label><input type="radio" name="aprovRh" id="aprovRh" value="sim">Sim</label>
+						<label><input type="radio" name="aprovRh" id="aprovRh" value="nao">Não</label>
+					</div>
+				</div>
+			
+			</div>
+			
+			<div class="row">
+				<div class="form-group col-md-12">
+					<label for="obsRh">Observação/Comentário do RH:</label>
+					<textarea rows="5" name="obsRh" id="obsRh" class="form-control"></textarea>
+				</div>
+			</div>
+	    	
+	    </div>
+	</div>
+	
+	<div class="panel panel-primary">
+	    <div class="panel-heading">
+	        <h3 class="panel-title"><span class="fluigicon fluigicon-user-selection fluigicon-md"></span>Aprovação do Financeiro</h3>
+	    </div>
+	    <div class="panel-body">
+	    	
+	    	<div class="row">
+			
+				<div class="form-group col-md-4">
+					<label for="aprovFinanceiro">Aprovação do Financeiro:</label>
+					<div class="radio">
+						<label><input type="radio" name="aprovFinanceiro" id="aprovFinanceiro" value="sim">Sim</label>
+						<label><input type="radio" name="aprovFinanceiro" id="aprovFinanceiro" value="nao">Não</label>
+					</div>
+				</div>
+			
+			</div>
+			
+			<div class="row">
+				<div class="form-group col-md-12">
+					<label for="obsFinanceiro">Observação/Comentário do Financeiro:</label>
+					<textarea rows="5" name="obsFinanceiro" id="obsFinanceiro" class="form-control"></textarea>
+				</div>
+			</div>
+	    	
+	    </div>
+	</div>
+	
+	
+</form>
+</div>
+</body>
+</html>
